@@ -1,0 +1,28 @@
+# profiles.yml
+
+# This top-level key MUST match the 'profile:' value in dbt_project.yml
+dataengineeringprd:
+  target: dev
+  outputs:
+    # Configuration for your development environment
+    dev:
+      type: bigquery
+      method: service-account-json
+      
+      # The GCP project ID where your data lives.
+      # Read from an environment variable for flexibility.
+      project: "{{ env_var('GCP_PROJECT_ID') }}"
+      
+      # The default BigQuery dataset where dbt will build your models.
+      # This is a required field.
+      dataset: "{{ env_var('GCP_DATASET') }}"
+      
+      # !! CRITICAL: Path to your service account JSON key file !!
+      # This is read from an environment variable to avoid storing secrets in code.
+      keyfile: "{{ env_var('GCP_KEYFILE_PATH') }}"
+
+      # The number of models dbt can run in parallel.
+      threads: 4
+      
+      # The location of your BigQuery dataset (e.g., US, EU).
+      location: US
