@@ -1,1 +1,12 @@
 .DS_Store
+DBTModels/logs/dbt.log
+logs/dbt.log
+target/graph.gpickle
+target/manifest.json
+target/partial_parse.msgpack
+.gitignore
+target/semantic_manifest.json
+target/run_results.json
+.gitignore
+target/graph_summary.json
+.DS_Store

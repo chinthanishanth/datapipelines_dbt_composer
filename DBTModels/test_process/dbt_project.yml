@@ -1,0 +1,29 @@
+name: 'dataengineeringprd'
+version: '1.0.0'
+config-version: 2
+
+vars:
+  batch_nbr: 1
+  delta_start_dttm: '2024-01-01 00:00:00'
+  delta_end_dttm: '2024-12-31 23:59:59'
+
+models:
+  project: "calm-repeater-471011-d8"
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dataengineeringprd'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+
+target-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/target"  # directory which will store compiled SQL files
+log-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/logs"
+#clean-targets:         # directories to be removed by `dbt clean`
+  #- "target"
+  #- "dbt_packages"
