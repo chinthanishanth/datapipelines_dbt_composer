@@ -2,11 +2,6 @@ name: 'dataengineeringprd'
 version: '1.0.0'
 config-version: 2
 
-vars:
-  batch_nbr: 1
-  delta_start_dttm: '2024-01-01 00:00:00'
-  delta_end_dttm: '2024-12-31 23:59:59'
-
 models:
   project: "calm-repeater-471011-d8"
 

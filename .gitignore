@@ -10,3 +10,5 @@ target/run_results.json
 .gitignore
 target/graph_summary.json
 .DS_Store
+target/
+logs/
