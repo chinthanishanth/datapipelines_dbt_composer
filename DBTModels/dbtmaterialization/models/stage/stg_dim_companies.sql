@@ -1,4 +1,8 @@
-{{ config(schema='stage',alias='stg_dim_companies') }}
+{{ config(
+    schema='stage',
+    alias='stg_dim_companies',
+    materialized='ephemeral'
+) }}
 
 with source_data as ( 
 select 

@@ -1,5 +1,8 @@
-{{ config(schema='stage',alias='stg_dim_location') }}
-
+{{ config(
+    schema='stage',
+    alias='stg_dim_location',
+    materialized='ephemeral'
+) }}
 with source_data as (
 select 
 trim(location) as location,

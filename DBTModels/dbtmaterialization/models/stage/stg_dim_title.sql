@@ -1,5 +1,8 @@
-{{ config(schema='stage',alias='stg_dim_title') }}
-
+{{ config(
+    schema='stage',
+    alias='stg_dim_title',
+    materialized='ephemeral'
+) }}
 with source_data as ( 
 select 
 lower(trim(title)) as designation,

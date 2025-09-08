@@ -14,13 +14,14 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
 
-target-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/target"  # directory which will store compiled SQL files
-log-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/logs"
-#clean-targets:         # directories to be removed by `dbt clean`
-  #- "target"
-  #- "dbt_packages"
+target-path: "target"
+log-path: "logs"
+
+#target-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/target"  # directory which will store compiled SQL files
+#log-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt_composer/logs"
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
 
 models:
-  project: "calm-repeater-471011-d8"
-  stage:
-    +materialization: ephemeral
+  

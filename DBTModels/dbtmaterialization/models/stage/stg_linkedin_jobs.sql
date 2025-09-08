@@ -1,5 +1,8 @@
-{{ config(schema='stage',alias='stg_linkedin_jobs') }}
-
+{{ config(
+    schema='stage',
+    alias='stg_linkedin_jobs',
+    materialized='ephemeral'
+) }}
 with source_data as (
 select 
 job_id,
