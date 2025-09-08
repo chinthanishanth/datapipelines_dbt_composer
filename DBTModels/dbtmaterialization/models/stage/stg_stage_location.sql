@@ -1,4 +1,4 @@
-{{ config(schema='stage',alias='stg_dim_location',materialized='incremental',pre_hook=["truncate table {{this}}"]) }}
+{{ config(schema='stage',alias='stg_dim_location') }}
 
 with source_data as (
 select 

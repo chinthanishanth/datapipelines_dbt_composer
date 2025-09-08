@@ -2,9 +2,6 @@ name: 'dataengineeringprd'
 version: '1.0.0'
 config-version: 2
 
-models:
-  project: "calm-repeater-471011-d8"
-
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dataengineeringprd'
 
@@ -22,3 +19,8 @@ log-path: "/Users/chinthanishanth/Desktop/projects/dbt_composer/datapiplines_dbt
 #clean-targets:         # directories to be removed by `dbt clean`
   #- "target"
   #- "dbt_packages"
+
+models:
+  project: "calm-repeater-471011-d8"
+  stage:
+    +materialization: ephemeral

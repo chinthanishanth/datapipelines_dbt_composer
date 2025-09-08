@@ -1,4 +1,4 @@
-{{ config(schema='stage',alias='stg_linkedin_jobs',materialized='incremental',pre_hook=["truncate table {{this}}"]) }}
+{{ config(schema='stage',alias='stg_linkedin_jobs') }}
 
 with source_data as (
 select 
