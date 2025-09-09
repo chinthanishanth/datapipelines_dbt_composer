@@ -13,3 +13,6 @@ company_name,
 src_timestamp
 from
 source_data
+{% if is_incremental() %}
+WHERE src_timestamp > (SELECT MAX(src_timestamp) FROM {{ this }})
+{% endif %}

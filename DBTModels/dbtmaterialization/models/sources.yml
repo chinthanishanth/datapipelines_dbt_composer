@@ -1,7 +1,16 @@
 version: 2
-sources:
 
+sources:
   - name: raw_data
     database: "calm-repeater-471011-d8"
+    schema: raw_data
     tables:
       - name: linkedin_jobs
+        loaded_at_field: src_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 96, period: hour}
+  - name: dim_linkedin
+    schema: dim_linkedin
+    tables:
+      - name: dim_dates 

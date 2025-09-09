@@ -24,4 +24,13 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 models:
-  
+seeds:
+  dataengineeringprd:
+    schema: dim_linkedin   # All seed tables for this project will land here
+    dim_date:
+      column_types:
+        datekey: int64
+        full_date: date
+        day_of_week: string
+        month: int64
+        year: int64 
