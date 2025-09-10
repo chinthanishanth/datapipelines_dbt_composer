@@ -11,6 +11,7 @@ src_timestamp
 from {{ source('raw_data','linkedin_jobs') }}
 )
 select
+DISTINCT
 company_name,
 src_timestamp
 from source_data

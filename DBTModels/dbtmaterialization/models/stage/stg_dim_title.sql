@@ -5,7 +5,7 @@
 ) }}
 with source_data as ( 
 select 
-lower(trim(title)) as designation,
+REGEXP_REPLACE(lower(trim(title)), r'[^a-zA-Z, ]+', '')  as designation,
 src_timestamp
 from {{ source('raw_data','linkedin_jobs') }}
 )

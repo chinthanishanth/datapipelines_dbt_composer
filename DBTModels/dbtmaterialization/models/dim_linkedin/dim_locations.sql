@@ -2,12 +2,13 @@
 
 with source_data as (
 select 
-ROW_NUMBER() OVER (order by location) as sur_location_id,
+DENSE_RANK() OVER (order by location) as sur_location_id,
 location,
 src_timestamp
 from {{ ref('stg_stage_location') }}
 )
 select
+DISTINCT
 sur_location_id,
 location,
 src_timestamp

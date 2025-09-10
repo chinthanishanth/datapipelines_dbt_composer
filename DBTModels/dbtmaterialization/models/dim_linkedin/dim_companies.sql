@@ -2,12 +2,13 @@
 
 with source_data as (
 select 
-ROW_NUMBER() OVER (order by company_name) as sur_company_id,
+DENSE_RANK() OVER (order by company_name) as sur_company_id,
 company_name,
 src_timestamp
 from {{ ref('stg_dim_companies') }}
 )
 select
+DISTINCT
 sur_company_id,
 company_name,
 src_timestamp
