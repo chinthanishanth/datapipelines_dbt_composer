@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fact_job_descriptions
+    description: "This table contains job description data."
+    columns:
+      - name: sur_description_id
+        description: "Surrogate key for job descriptions."
+        tests:
+          - not_null
+          - unique
+      - name: job_id
+        description: "Identifier for the job."
+        tests:
+          - unique
+      - name: sur_company_id
+        description: "Surrogate key for the company."
+        tests:
+          - relationships:
+              to: ref('dim_companies')
+              field: sur_company_id
+      - name: sur_location_id
+        description: "Surrogate key for the location."
+        tests:
+          - relationships:
+              to: ref('dim_locations')
+              field: sur_location_id
