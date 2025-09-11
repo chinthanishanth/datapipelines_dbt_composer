@@ -1,0 +1,4 @@
+packages:
+  - local: /Users/chinthanishanth/Desktop/projects/dbt_composer/dbt_packages/dbt_utils
+    name: dbt_utils
+sha1_hash: e3222dac7f5f9e11576d3d891a778e0137bc1546

@@ -12,3 +12,4 @@ target/graph_summary.json
 .DS_Store
 target/
 logs/
+DBTModels/linkedin/dbt_packages/dbt_utils

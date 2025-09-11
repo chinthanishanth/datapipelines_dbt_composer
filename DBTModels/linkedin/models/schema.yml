@@ -17,11 +17,21 @@ models:
         description: "Surrogate key for the company."
         tests:
           - relationships:
-              to: ref('dim_companies')
-              field: sur_company_id
+              arguments:
+                to: ref('dim_companies')
+                field: sur_company_id
       - name: sur_location_id
         description: "Surrogate key for the location."
         tests:
           - relationships:
-              to: ref('dim_locations')
-              field: sur_location_id
+              arguments:
+                to: ref('dim_locations')
+                field: sur_location_id
+  - name: dim_companies
+    description: "This table contains company data."
+    columns:
+      - name: sur_company_id
+        description: "Surrogate key for companies."
+        tests:
+          - test_check_duplicate_values:
+              column_name: sur_company_id

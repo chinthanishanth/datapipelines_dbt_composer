@@ -1,8 +1,9 @@
-{{ config(schema='facts',alias='fact_job_descriptions',materialized='table',unique_key=['sur_description_id']) }}
+{{ config(schema='facts',alias='fact_job_descriptions',materialized='incremental',unique_key=['sur_description_id']) }}
 
 with source_data as (
 select 
-ROW_NUMBER() OVER (order by job_id) as sur_description_id,
+{{ dbt_utils.generate_surrogate_key(['job_id']) }} as sur_description_id,
+-- ROW_NUMBER() OVER (order by job_id) as sur_description_id,
 job_id,
 job_description,
 trim(company) as company_name,
